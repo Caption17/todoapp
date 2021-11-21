@@ -3,7 +3,13 @@ import TodoForm from './TodoForm';
 import Todo from './Todo';
 
 function TodoList() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(()=>{
+    const todolistt = JSON.parse(localStorage.getItem('todos'));
+    if (todolistt) {
+      return todolistt;
+    }
+    return [];
+  });
 
   const addTodo = todo => {
     if (!todo.text || /^\s*$/.test(todo.text)) {
@@ -11,6 +17,7 @@ function TodoList() {
     }
 
     const newTodos = [todo, ...todos];
+    localStorage.setItem('todos', JSON.stringify(newTodos));
 
     setTodos(newTodos);
     console.log(...todos);
