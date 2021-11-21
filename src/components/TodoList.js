@@ -6,7 +6,6 @@ import {initial_todolist} from '../constant/todolistdata';
 function TodoList() {
   const [todos, setTodos] = useState(()=>{
     const todolistt = JSON.parse(localStorage.getItem('todos'));
-    
     if (todolistt) {
       return todolistt;
     }
