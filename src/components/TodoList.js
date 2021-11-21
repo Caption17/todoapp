@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import TodoForm from './TodoForm';
 import Todo from './Todo';
+import {initial_todolist} from '../constant/todolistdata';
 
 function TodoList() {
   const [todos, setTodos] = useState(()=>{
     const todolistt = JSON.parse(localStorage.getItem('todos'));
+    
     if (todolistt) {
       return todolistt;
     }
-    return [];
+    return initial_todolist;
   });
 
   const addTodo = todo => {

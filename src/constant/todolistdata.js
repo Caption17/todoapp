@@ -1,0 +1,1 @@
+export const initial_todolist = [{"id": 9521,"text":"Uống nước"},{"id":6409,"text":"Ăn cơm"},{"id":2559,"text":"Chạy bộ"},{"id":3997,"text":"Đi ngủ"},{"id":7888,"text":"Đánh cầu lông"},{"id":4133,"text":"Đi chơi"},{"id":8981,"text":"Học bài"}]
